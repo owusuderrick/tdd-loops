@@ -12,6 +12,11 @@
  */
 export function echo(word, n) {
   // TODO
+  let repeat = "";
+  for (let i = 0; i < n; i++) {
+    repeat += word;
+  }
+  return repeat;
 }
 
 /**
@@ -28,6 +33,13 @@ export function echo(word, n) {
  */
 export function echoWithSpace(word, n) {
   // TODO
+  let repeat = " ";
+  for (let i = 0; i < n; i++) {
+    if (i > 0) {
+      repeat += " ";
+    }
+    return repeat;
+  }
 }
 
 /**
@@ -43,6 +55,11 @@ export function echoWithSpace(word, n) {
  */
 export function sumTo(n) {
   // TODO
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -59,6 +76,11 @@ export function sumTo(n) {
  */
 export function sumFromTo(a, z) {
   // TODO
+  let sum = 0;
+  for (let i = a; i <= z; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -109,6 +131,15 @@ export function sumOddsToN(n) {
  */
 export function getGrowthTime(start, target) {
   // TODO
+  let time = 0;
+  let current = start;
+  if (start <= 0) {
+    return undefined;
+  }
+  for (; current < target; time += 20) {
+    current *= 2;
+  }
+  return time;
 }
 
 /**
@@ -129,6 +160,9 @@ export function getGrowthTime(start, target) {
  */
 export function getCompoundTime(start, rate, target) {
   // TODO
+  if (start <= 0 || rate <= 0) {
+    return undefined;
+  }
 }
 
 /**
@@ -175,4 +209,17 @@ export function moveWater(colander, bucket) {
  */
 export function fizzbuzz(n) {
   // TODO
+  for (let i = 1; i < n; i++) {
+    let f3 = i % 3 === 0;
+    let b5 = i % 5 === 0;
+    if (f3 && b5) {
+      return `fizzbuzz`;
+    } else if (f3) {
+      return `fizz`;
+    } else if (b5) {
+      return `buzz`;
+    } else {
+      return i;
+    }
+  }
 }
